@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+      }
+      form textarea {
+        overflow-y: scroll;
+        width: 190px;
+        height: 170px;
+        resize: none;
+      }
+    </style>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>My first web page</h1>
+    <h2>What this is</h2>
+    <p>
+      Welcome to <em>my first webpage</em>. I created this webpage without the
+      assistance of a webpage editor. Just my little text editor and a keen
+      <strong>understanding of HTML</strong>
+    </p>
+    <h2>Why this is</h2>
+    <ul>
+      <li>To learn HTML</li>
+      <li>List elements</li>
+      <ol>
+        <li>Hoe</li>
+        <li>FAQ</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ol>
+      <li>Here I have created ordered and unordered list</li>
+    </ul>
+    <h2>ZeusLearning.com</h2>
+    <a href="https://www.zeuslearning.com/" target="_blank"
+      >This link will open zeuslearning.com in new tab</a
+    >
+    <h2>On click of following image navigate to Google.com</h2>
+    <a href="https://www.google.com/" target="_blank"
+      ><img src="Images/google.png" alt="Google logo"
+    /></a>
+    <h3>Some random table</h3>
+    <table>
+      <tr>
+        <td>Row 1, cell 1</td>
+        <td>Row 1, cell 2</td>
+        <td>Row 1, cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, cell 1</td>
+        <td>Row 2, cell 2</td>
+        <td>Row 2, cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 3, cell 1</td>
+        <td>Row 3, cell 2</td>
+        <td>Row 3, cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 4, cell 1</td>
+        <td>Row 4, cell 2</td>
+        <td>Row 4, cell 3</td>
+      </tr>
+    </table>
+    <h3>Some random form</h3>
+    <p><strong>Note: </strong>It looks the part, but it won't do anything.</p>
+    <form id="myForm">
+      <label for="name">Name:</label><br /><br />
+      <input type="text" placeholder="Your Name" id="name" /><br /><br />
+      <label for="comment">Comments:</label><br /><br />
+      <textarea placeholder="Your comments" id="comment" rows="10"></textarea>
+      <p>Are You:</p>
+      <input type="radio" id="Male" name="gender" />
+      <label for="Male">Male</label><br /><br />
+      <input type="radio" id="Female" name="gender" />
+      <label for="Female">Female</label><br /><br />
+      <button type="submit" onClick="validateForm(event)">Submit Query</button>
+    </form>
+    <script type="text/javascript">
+      function validateForm(e) {
+        e.preventDefault()
+        var name = document.getElementById("name").value;
+        var comment = document.getElementById("comment").value;
+        var male = document.getElementById("Male").checked;
+        var female = document.getElementById("Female").checked;
+        if (name == "" || comment == "" || !(male || female)) {
+          if (name == "") {
+            document.getElementById("name").focus();
+          } else if (comment == "") {
+            document.getElementById("comment").focus();
+          }
+          alert("All fields are compulsory");
+          return false;
+        }
+        alert("Form submitted");
+        return false;
+      }
+    </script>
+  </body>
+</html>
+<!-- https://github.com/kabirrrr19/zeuuss/tree/master/july10/task1 -->
